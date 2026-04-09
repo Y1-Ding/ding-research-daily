@@ -61,18 +61,18 @@
     3) 如何把每条规则转成可自动回归的测试样例？
 
 ## 3) 热门项目/可试个人项目
-- [scan-for-secrets 0.3](https://github.com/simonw/scan-for-secrets/releases/tag/0.3)
-  - 摘要: 新增 `--redact`，可在扫描后批量替换泄露密钥并处理常见转义形式。
-  - 为什么重要(对我): 适合你在发布 agent 日志/对话记录前做自动脱敏，降低 API key 泄露风险。
-  - 评分: 79/100
-  - 明日动作(<=20min): 用一个测试目录跑一次 secrets 扫描+脱敏演练，形成固定发布前检查。
+- [langchain-core==1.2.28](https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.2.28)
+  - 摘要: LangChain 核心包在 2026-04-08 发布新版本，持续推进核心抽象与依赖更新节奏。
+  - 为什么重要(对我): 若你在做低成本 side project（RAG/Agent 原型），跟进核心包版本可减少后续接口漂移导致的重构成本。
+  - 评分: 78/100
+  - 明日动作(<=20min): 新建一个最小 demo 分支，仅升级 `langchain-core` 并跑 1 条端到端链路烟测。
   - 估计复现成本: 低
 
-- [research-llm-apis 2026-04-04](https://github.com/simonw/research-llm-apis/releases/tag/2026-04-04)
-  - 摘要: 汇总多家 LLM 厂商的流式/非流式 JSON 响应样本，用于设计更稳健的抽象层。
-  - 为什么重要(对我): 你做多模型/多供应商 Agent 编排时，可减少协议差异导致的工具调用故障。
-  - 评分: 76/100
-  - 明日动作(<=20min): 对照你当前 SDK 抽象，列出 3 个跨供应商不一致字段并补兼容层。
+- [Fix Breaking Change in Message Block Buffer Resolution (LlamaIndex)](https://github.com/run-llama/llama_index/commit/91fe33e75ce31d3ca447c017a5ea153ed8b38700)
+  - 摘要: LlamaIndex 在近期提交中修复 Message Block Buffer 的破坏性变更兼容问题。
+  - 为什么重要(对我): 对个人项目来说，这类“兼容性修复”比新功能更关键，能显著减少上线后运行时异常。
+  - 评分: 77/100
+  - 明日动作(<=20min): 检查你当前消息缓冲/对话记忆模块是否有同类边界条件，并补 1 个回归测试。
   - 估计复现成本: 中
 
 ## 4) 职业与商业探索池（AI个人公司/出海/海外工作）
