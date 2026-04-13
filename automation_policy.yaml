@@ -1,0 +1,16 @@
+automation:
+  name: daily-research-agent
+  timezone: Asia/Shanghai
+  schedule:
+    local_time: "21:30"
+    # 21:30 Asia/Shanghai == 13:30 UTC
+    cron_utc: "30 13 * * *"
+  retry:
+    max_attempts_per_run: 2
+    backoff_seconds: 300
+  failure_alert:
+    trigger: consecutive_failed_days
+    threshold: 2
+    channel: alert
+    message: "Daily research automation failed for 2 consecutive days."
+
